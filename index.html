@@ -240,6 +240,10 @@
     position:relative;overflow:hidden;
     border:1px solid rgba(145,30,60,0.12);
   }
+  .about-photo img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+  }
   .about-photo::before{
     content:"";position:absolute;width:220px;height:220px;border-radius:50%;
     background:var(--orange);opacity:.12;top:-60px;right:-60px;
@@ -248,7 +252,10 @@
     content:"";position:absolute;width:160px;height:160px;border-radius:50%;
     background:var(--green-deep);opacity:.10;bottom:-50px;left:-40px;
   }
-  .about-photo-label{position:relative;z-index:1;color:var(--bordeaux);font-weight:600;font-size:14px}
+  /* Hidden by default; the img's onerror handler (inline) reveals this
+     with display:flex directly if the photo file is missing/broken —
+     no reliance on newer CSS selectors, so it works everywhere. */
+  .about-photo-label{position:relative;z-index:1;color:var(--bordeaux);font-weight:600;font-size:14px;display:none;flex-direction:column;align-items:center;justify-content:center}
   .about-text .eyebrow{color:var(--bordeaux);margin-bottom:16px;display:block}
   .about-text h2{font-size:clamp(28px,4vw,42px);margin-bottom:22px}
   .about-text p{color:#4a4a4a;font-size:16px;margin-bottom:16px}
@@ -371,7 +378,7 @@
       <p class="lede">Não existe uma alimentação perfeita e igual para todas as pessoas. Existe uma alimentação que se adapta às tuas necessidades, preferências e rotina — com orientação profissional, sem dietas restritivas.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contacto">Marcar consulta</a>
-        <a class="btn btn-outline" href="https://instagram.com/beacarneiro_nutri" target="_blank" rel="noopener">Seguir no Instagram</a>
+        <a class="btn btn-outline" href="https://www.instagram.com/beacarneiro_nutri/" target="_blank" rel="noopener">Seguir no Instagram</a>
       </div>
       <div class="hero-line" aria-hidden="true"></div>
     </div>
@@ -423,6 +430,14 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="about-photo reveal">
+          <!--
+            Para colocares a tua foto:
+            1. No GitHub, faz "Add file > Upload files" e carrega a foto para uma pasta "images" no mesmo repositório.
+            2. Dá-lhe um nome simples, sem espaços nem acentos, ex: sobre.jpg
+            3. Muda o src abaixo para "images/sobre.jpg" (ou o nome que usaste).
+            Enquanto não houver imagem, o texto placeholder mantém-se visível.
+          -->
+          <img src="images/sobre.jpg" alt="Beatriz Carneiro, nutricionista" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <span class="about-photo-label">[ a tua fotografia aqui ]<br>luz natural · contexto real</span>
         </div>
         <div class="about-text reveal">
@@ -518,7 +533,7 @@
           <span class="eyebrow" style="color:var(--yellow)">@beacarneiro_nutri</span>
           <h2>Conteúdo novo todas as semanas</h2>
           <p>Educação alimentar, hábitos, exercício e saúde intestinal — sempre num tom próximo e sem julgamento.</p>
-          <a class="btn btn-light" href="https://instagram.com/beacarneiro_nutri" target="_blank" rel="noopener">Seguir no Instagram</a>
+          <a class="btn btn-light" href="https://www.instagram.com/beacarneiro_nutri/" target="_blank" rel="noopener">Seguir no Instagram</a>
         </div>
         <div class="insta-grid" aria-hidden="true">
           <div class="insta-cell" style="background:var(--orange)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.6"><path d="M4 13a8 8 0 0 1 14.93-4"/></svg></div>
@@ -540,8 +555,10 @@
       <p>Escreve-me diretamente ou marca a tua consulta — respondo o mais rápido possível.</p>
       <div class="hero-actions">
         <a class="btn btn-light" href="mailto:[email@exemplo.com]">Enviar email</a>
-        <a class="btn btn-outline" href="https://instagram.com/beacarneiro_nutri" target="_blank" rel="noopener" style="border-color:var(--cream)">Mensagem no Instagram</a>
+        <!-- Substitui o "#" abaixo pelo link do teu sistema de marcações (ex: Calendly) assim que o tiveres pronto -->
+        <a class="btn btn-outline" href="#" style="border-color:var(--cream)">Marcar consulta</a>
       </div>
+      <p style="color:rgba(255,248,244,0.55);font-size:12.5px;margin-top:18px">O botão "Marcar consulta" ainda não tem link — assim que escolheres o teu sistema de marcações, é só editar o href no HTML.</p>
     </div>
   </section>
 
@@ -556,7 +573,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#como-funciona">Como funciona</a>
-        <a href="https://instagram.com/beacarneiro_nutri" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.instagram.com/beacarneiro_nutri/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">
