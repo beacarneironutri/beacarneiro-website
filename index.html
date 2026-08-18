@@ -277,7 +277,8 @@
   .service-item:last-child{border-bottom:none}
   .service-item h3{font-size:26px;color:var(--orange);font-weight:700;margin-bottom:8px}
   .service-item p{font-size:14.5px;color:#5a5a5a;max-width:440px}
-  .service-price{font-family:'Fraunces',serif;font-style:normal;font-weight:600;font-size:18px;color:var(--bordeaux);white-space:nowrap;padding-top:6px}
+  .service-price{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;color:var(--bordeaux);white-space:nowrap;padding-top:6px;transition:color .3s var(--ease);cursor:pointer}
+  .service-price:hover{color:var(--orange)}
   .service-note{text-align:center;margin-top:40px;font-size:13.5px;color:#777}
 
   /* ---------- process ---------- */
@@ -444,7 +445,7 @@
           <span class="eyebrow">Sobre mim</span>
           <h2>Olá, sou a Beatriz.</h2>
           <p>Sou nutricionista e acredito que a alimentação deve adaptar-se à tua vida — não o contrário. Trabalho contigo para encontrar um caminho que respeite os teus gostos, o teu tempo e os teus objetivos, sempre com base em evidência científica.</p>
-          <p>Nada de terrorismo alimentar, dietas extremas ou soluções rápidas. O meu trabalho é ajudar-te a criar hábitos consistentes — e a sentires-te acompanhada ao longo do processo, não apenas avaliada.</p>
+          <p>Sem dietas extremas nem soluções rápidas — o meu trabalho é ajudar-te a criar hábitos consistentes, e a sentires-te acompanhada ao longo do processo, não apenas avaliada.</p>
           <span class="about-credentials">Beatriz Carneiro · Cédula Profissional 6293N</span>
         </div>
       </div>
@@ -465,28 +466,28 @@
             <h3>Consulta inicial</h3>
             <p>Avaliação completa e plano alimentar personalizado, com espaço para todas as tuas perguntas.</p>
           </div>
-          <span class="service-price">[preço]</span>
+          <a class="service-price" href="#contacto">Marca já &rarr;</a>
         </div>
         <div class="service-item">
           <div>
             <h3>Consulta de seguimento</h3>
             <p>Acompanhamento e ajustes ao plano ao longo do tempo, conforme a tua evolução.</p>
           </div>
-          <span class="service-price">[preço]</span>
+          <a class="service-price" href="#contacto">Marca já &rarr;</a>
         </div>
         <div class="service-item">
           <div>
             <h3>Plano alimentar personalizado</h3>
             <p>Documento detalhado com refeições, porções e equivalências práticas.</p>
           </div>
-          <span class="service-price">[preço]</span>
+          <a class="service-price" href="#contacto">Marca já &rarr;</a>
         </div>
         <div class="service-item">
           <div>
             <h3>Pacote de acompanhamento</h3>
             <p>4 consultas com acompanhamento contínuo ao longo de um mês.</p>
           </div>
-          <span class="service-price">[preço]</span>
+          <a class="service-price" href="#contacto">Marca já &rarr;</a>
         </div>
       </div>
       <p class="service-note reveal">Consulta online disponível para todo o país. Valores e disponibilidade confirmados por mensagem.</p>
@@ -551,14 +552,13 @@
   <section class="final-cta" id="contacto">
     <div class="wrap reveal">
       <span class="quote-mark" aria-hidden="true">&rdquo;</span>
-      <h2>Pronta para começares?</h2>
-      <p>Escreve-me diretamente ou marca a tua consulta — respondo o mais rápido possível.</p>
+      <h2>Vamos começar?</h2>
+      <p>Marca a tua consulta em poucos cliques — ou, se preferires, escreve-me diretamente por email.</p>
       <div class="hero-actions">
-        <a class="btn btn-light" href="mailto:[email@exemplo.com]">Enviar email</a>
         <!-- Substitui o "#" abaixo pelo link do teu sistema de marcações (ex: Calendly) assim que o tiveres pronto -->
-        <a class="btn btn-outline" href="#" style="border-color:var(--cream)">Marcar consulta</a>
+        <a class="btn btn-light" href="#">Marcar consulta</a>
+        <a class="btn btn-outline" href="mailto:beacarneironutri@gmail.com" style="border-color:var(--cream)">Enviar email</a>
       </div>
-      <p style="color:rgba(255,248,244,0.55);font-size:12.5px;margin-top:18px">O botão "Marcar consulta" ainda não tem link — assim que escolheres o teu sistema de marcações, é só editar o href no HTML.</p>
     </div>
   </section>
 
